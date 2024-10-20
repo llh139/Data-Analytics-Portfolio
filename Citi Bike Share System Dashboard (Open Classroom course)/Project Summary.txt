@@ -1,0 +1,5 @@
+Opportunity: Motivate (the company that operates the Citi Bike program) is selling digital ad space at all their Citi Bike stations that can be purchased by the hour. Citi Bike also provides historical trip data for all of the bike station locations.
+
+Project Aim: The marketing team will work with clients to launch digital billboard ad campaigns to target Citi Bike riders. The team wants to maximize the effectiveness of their targeted ad campaigns.
+
+Dashboard Requirements: The marketing team needs a dashboard that will utilize 2018 data to provide insights for which Citi Bike stations to target by answering the following questions: (1) who is using the Citi Bike stations, (2) when is the Citi Bike system used the most, and (3) which stations are being used during the busiest times?
