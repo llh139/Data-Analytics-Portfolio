@@ -209,3 +209,28 @@ def find_outliers(feature):
 
     # Return rows where the feature is outside the outlier boundaries
     return np.where((feature > upper_bound) | (feature < lower_bound))
+
+def fast_mode(df, key_cols, value_col):
+    """ 
+    Calculate a column mode, by group, ignoring null values. 
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame over which to calcualate the mode. 
+    key_cols : list of str
+        Columns to groupby for calculation of mode.
+    value_col : str
+        Column for which to calculate the mode. 
+
+    Return
+    ------ 
+    pandas.DataFrame
+        One row for the mode of value_col per key_cols group. If ties, 
+        returns the one which is sorted first. 
+    """
+    return (df.groupby(key_cols + [value_col]).size() 
+              .to_frame('counts').reset_index() 
+              .sort_values('counts', ascending=False) 
+              .drop_duplicates(subset=key_cols)).drop(columns='counts')
+
